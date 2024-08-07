@@ -1,11 +1,8 @@
-//import { Controller, Get, Post, Put, Param, Delete, Body } from '@nestjs/common';
 import {Controller, Get, Post, Request, UseGuards} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import {JwtAuthGuard} from "./jwt.auth.guard";
 import { UsersService } from '../users/users.service';
 import { User, UserDocument } from "../users/schemas/user.schema";
-
-import { HydratedDocument, QueryWithHelpers, Schema as MongooseSchema } from 'mongoose';
 
 @Controller('auth')
 export class AuthController {

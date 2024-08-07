@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Param, Delete, Body, UseGuards, Query, UploadedFiles, UseInterceptors} from '@nestjs/common';
+import { Controller, Get, Post, Put, Param, Body, UseGuards, Query, UploadedFiles, UseInterceptors} from '@nestjs/common';
 import {  Schema as MongooseSchema } from 'mongoose';
 import { FilesInterceptor } from '@nestjs/platform-express/multer';
 

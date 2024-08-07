@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, ConflictException } from '@nestjs/common';
 import { Model, Connection, Schema as MongooseSchema } from 'mongoose';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
 import { Hotel, HotelDocument } from "./schemas/hotel.schema";
-import { SearchHotelParams, UpdateHotelParams, IHotelService } from './interfaces/hotel.interface';
+import { SearchHotelParams, UpdateHotelParams } from './interfaces/hotel.interface';
 
 @Injectable()
 export class HotelsService {
@@ -12,11 +12,13 @@ export class HotelsService {
     ) {}
 
     //Добавляет новый отель
-    async create(data: any): Promise<HotelDocument> {
-        const hotel = new this.HotelModel(data);
-        hotel.createdAt = new Date();
-        hotel.updatedAt = hotel.createdAt;
-        return await hotel.save();
+    async create(data: any): Promise<HotelDocument> {                
+        try {
+            const hotel = new this.HotelModel(data);
+            return await hotel.save();
+        } catch (e) {
+            throw new ConflictException(`Ошибка при записи в базу отеля: ${e.title}. Описание ошибки: ${e.message}`);
+         }        
     }
 
     //Возвращает отель по id

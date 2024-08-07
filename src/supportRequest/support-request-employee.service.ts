@@ -8,7 +8,7 @@ import { USER_ROLE } from 'config/userRoles';
 
 import { User } from 'src/users/schemas/user.schema';
 import { SupportRequest, Message } from "./schemas/SupportChat.schema";
-import { ISupportRequestEmployeeService, MarkMessagesAsReadDto } from './interfaces/dto/SupportRequestDto';
+import { ISupportRequestEmployeeService } from './interfaces/dto/SupportRequestDto';
 
 @Injectable()
 export class SupportRequestEmployeeService

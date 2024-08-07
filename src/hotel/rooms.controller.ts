@@ -1,9 +1,8 @@
-import { Controller, Get, Post, Put, Param, Delete, Body, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Put, Param, Body, UseGuards } from '@nestjs/common';
 import { RoomsService } from './rooms.service';
 
-import { HotelDocument } from './schemas/hotel.schema';
 import { RoomDocument } from './schemas/hotelRoom.schema';
-import { HydratedDocument, QueryWithHelpers, Schema as MongooseSchema } from 'mongoose';
+import { Schema as MongooseSchema } from 'mongoose';
 
 
 import {Guard as RoomGuard} from "../guards/Guard.guard";

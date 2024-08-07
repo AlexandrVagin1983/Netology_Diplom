@@ -1,5 +1,4 @@
 import {Schema as MongooseSchema} from 'mongoose';
-import { Hotel } from '../schemas/hotel.schema'
 import { HotelRoom } from '../schemas/hotelRoom.schema'
 
   export interface SearchRoomsParams {

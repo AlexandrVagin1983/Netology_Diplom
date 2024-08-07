@@ -1,5 +1,5 @@
 import {Schema as MongooseSchema} from 'mongoose';
-import { User, UserDocument } from "src/users/schemas/user.schema";
+import { User } from "src/users/schemas/user.schema";
 
 export interface SearchUserParams {
     limit: number

@@ -1,4 +1,4 @@
-import { Body, Controller, ForbiddenException, Get, Param, Post, Query, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, ForbiddenException, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { CurrentUser } from 'src/common/decorators/current-user.decorator';
 import { UserRoles } from 'src/common/decorators/roles.decorator';
 

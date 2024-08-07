@@ -1,5 +1,6 @@
-import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
-import { Schema as MongooseSchema, Document} from 'mongoose';
+import { Prop, Schema, SchemaFactory  } from '@nestjs/mongoose';
+import { Schema as MongooseSchema, Document } from 'mongoose';
+import { timestamps } from 'mongoose-timestamp';
 
 export type HotelDocument = Hotel & Document;
 
@@ -8,18 +9,21 @@ export class Hotel {
     @Prop({ required: true })
     public _id: MongooseSchema.Types.ObjectId;
     
-    @Prop({ required: true })
+    @Prop({ required: true, unique: true })
     public title: string;
 
-    @Prop()
+    @Prop({ required: true })
     public description: string;
 
-    @Prop()
+    @Prop({ required: true })
     public createdAt: Date;
 
-    @Prop()
+    @Prop({ required: true })
     public updatedAt: Date;
 
 }
 
-export const HotelSchema = SchemaFactory.createForClass(Hotel);
+export const HotelSchema = SchemaFactory.createForClass(Hotel).plugin(timestamps, {
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    });

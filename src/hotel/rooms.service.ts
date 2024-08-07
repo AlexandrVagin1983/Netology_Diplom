@@ -1,4 +1,4 @@
-import { Injectable, Inject, forwardRef } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Model, Connection, Schema as MongooseSchema } from 'mongoose';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
 import { SearchRoomsParams } from "./interfaces/hotelRoom.interface";
@@ -13,7 +13,6 @@ export class RoomsService {
 
     //Добавляет новый номер
     async create(data: HotelRoom): Promise<RoomDocument> {
-        const { hotel, description, images } = data;
         const hotelRoom = await new this.RoomModel(data).save();
         return await hotelRoom.populate('hotel');
     }

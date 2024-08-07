@@ -1,5 +1,5 @@
-import { Injectable, Inject, forwardRef } from '@nestjs/common';
-import { Model, Connection, Document, HydratedDocument, QueryWithHelpers } from 'mongoose';
+import { Injectable } from '@nestjs/common';
+import { Model, Connection } from 'mongoose';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
 import { SupportRequest, SupportRequestDocument, Message, MessageDocument } from "./schemas/SupportChat.schema";
 import { GetChatListParams, SendMessageDto } from './interfaces/dto/SupportRequestDto';

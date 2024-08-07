@@ -6,11 +6,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/users/schemas/user.schema';
 import {Schema as MongooseSchema} from 'mongoose';
 
-import { SupportRequest, SupportRequestDocument, Message, MessageDocument } from "./schemas/SupportChat.schema";
-import { ISupportRequestClientService, CreateSupportRequestDto, MarkMessagesAsReadDto } from './interfaces/dto/SupportRequestDto';
-
-//import { Message, SupportRequest } from '../schema';
-//import { SupportRequestDocument } from '../schema/support-request.schema';
+import { SupportRequest, Message } from "./schemas/SupportChat.schema";
+import { ISupportRequestClientService, CreateSupportRequestDto } from './interfaces/dto/SupportRequestDto';
 
 @Injectable()
 export class SupportRequestClientService

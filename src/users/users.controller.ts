@@ -1,12 +1,6 @@
-import { Controller, Get, Post, Put, Param, Delete, Body, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
-
-
 import { User, UserDocument } from './schemas/user.schema';
-import { HydratedDocument, QueryWithHelpers, Schema as MongooseSchema } from 'mongoose';
-
-import { SearchUserParams } from './interfaces/user.interface';
-
 import {Guard as UserGuard} from "../guards/Guard.guard";
 
 @Controller()
